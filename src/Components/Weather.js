@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from 'react-redux'
 import { selectDisplay } from "../redux/slices/displayCountrySlice";
 
+
 const Weather = () => {
     
     const [weather, setWeather] = useState();
@@ -17,8 +18,8 @@ const Weather = () => {
             url: 'https://weatherapi-com.p.rapidapi.com/current.json',
             params: {q: `${latitude}, ${longitude}`},
             headers: {
-                'X-RapidAPI-Key': '94edf7faeamsh4bcbabc8c0ef661p1b9756jsn83e0fde9b870',
-                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                'X-RapidAPI-Key': `${process.env.REACT_APP_API_KEY}`,
+                'X-RapidAPI-Host': `weatherapi-com.p.rapidapi.com`
             }
         };
         
