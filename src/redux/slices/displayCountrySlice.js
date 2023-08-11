@@ -12,6 +12,7 @@ export const displayCountrySlice = createSlice(
                 state.value = action.payload
             },
             deleteDisplayCountry: (state) => {
+                console.log('line 15 in dCS', state.value)
                 state.value = null
             }
         }
@@ -21,7 +22,7 @@ export const displayCountrySlice = createSlice(
 export const { setDisplayCountry, deleteDisplayCountry } = displayCountrySlice.actions
 
 export const selectDisplay = (state) => {
-    // console.log('line 24', state.displayedCountry)
+    console.log('line 22', state.displayedCountry)
     return state.displayCountry.value
 }
 
